@@ -1,2 +1,3 @@
-# PY_PB_Strava
-Coleta de dados no Strava e análises realizadas via Python e Power BI
+## Python e Power BI no Ritmo do Strava 🏃‍♂️📊
+
+Dados são vitais para todos, inclusive para a área do esporte e da saúde, e estão provando ser aliados importantes. Com orgulho, apresento o projeto **Pythletics** 🚴‍♀️🏋️‍♂️, uma iniciativa que visa extrair o máximo de informações da API do Strava. Através da **flexibilidade do Python** 🐍 para a manipulação e análise de dados, e com a **robustez visual do Power BI** 📈, é demonstrado não apenas métricas, mas também insights e tendências que frequentemente permanecem ocultas no comportamento de atletas amadores.
