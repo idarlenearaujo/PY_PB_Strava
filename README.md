@@ -9,3 +9,12 @@ Utilizando a **agilidade do Python** 🐍 na manipulação e análise de dados, 
 ## **Objetivo** 🎯 
 
 **Analisar e comparar** a eficácia do Python e Power BI na obtenção de resultados. Investigando qual ferramenta oferece maior **velocidade, precisão e profundidade** nos *insights*. Os resultados 🏆 seram apresentados de forma clara, permitindo que os atletas e entusiastas entendam e apliquem essas descobertas em suas jornandas esportivas.
+
+### **Missões**
+
+Desempenho ao Longo do Tempo:
+*   Calcule métricas como a distância média por mês,
+*   Tempo médio em movimento,
+*   Ganho de elevação médio.
+
+Use a start_date_local para agrupar atividades por semana ou mês e observe as tendências.

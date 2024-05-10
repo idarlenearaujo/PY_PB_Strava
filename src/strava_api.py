@@ -103,7 +103,6 @@ class Conexao:
         elev_high: A maior elevação alcançada durante a atividade.
         elev_low: A menor elevação durante a atividade.
         pr_count: O número de recordes pessoais alcançados durante a atividade.
-        total_photo_count: O número total de fotos carregadas para a atividade.
         """
         colunas_utilizadas = [
             "name",
@@ -124,8 +123,7 @@ class Conexao:
             "max_heartrate",
             "elev_high",
             "elev_low",
-            "pr_count",
-            "total_photo_count",
+            "pr_count"
         ]
         df = df[colunas_utilizadas]
 
