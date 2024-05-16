@@ -1,7 +1,13 @@
 name,distance,moving_time,elapsed_time,total_elevation_gain,sport_type,id,start_date_local,achievement_count,kudos_count,comment_count,photo_count,average_speed,max_speed,average_heartrate,max_heartrate,elev_high,elev_low,pr_count
-Simulador de escada ao entardecer,0.0,989,989,0.0,StairStepper,11364604596,2024-05-08T18:13:37Z,0,2,0,0,0.0,0.0,134.1,168.0,0.0,0.0,0
+Corrida ao entardecer,3466.0,2389,2828,31.4,Run,11420102636,2024-05-15T18:13:10Z,0,2,0,0,1.451,2.697,94.0,155.0,845.1,811.9,0
+Treinamento com peso vespertino,0.0,2403,2403,0.0,WeightTraining,11419849701,2024-05-15T17:23:12Z,0,1,0,0,0.0,0.0,100.2,133.0,0.0,0.0,0
+Corrida da tarde,2610.0,1808,1808,0.0,Run,11419849731,2024-05-14T17:52:10Z,0,1,0,0,1.444,0.0,121.7,128.0,0.0,0.0,0
+Simulador de escada vespertino,0.0,1849,1849,0.0,StairStepper,11419849633,2024-05-14T17:20:36Z,0,1,0,0,0.0,0.0,146.5,174.0,0.0,0.0,0
+Treinamento com peso vespertino,0.0,4331,4331,0.0,WeightTraining,11419849823,2024-05-13T17:19:25Z,0,1,0,0,0.0,0.0,94.1,127.0,0.0,0.0,0
+Treinamento com peso vespertino,0.0,3794,3794,0.0,WeightTraining,11419849709,2024-05-09T17:14:05Z,0,1,0,0,0.0,0.0,92.8,127.0,0.0,0.0,0
+Simulador de escada ao entardecer,0.0,989,989,0.0,StairStepper,11364604596,2024-05-08T18:13:37Z,0,3,0,0,0.0,0.0,134.1,168.0,0.0,0.0,0
 Pedalada da tarde,0.0,959,959,0.0,Ride,11364604575,2024-05-08T17:55:33Z,0,2,0,0,0.0,0.0,104.2,132.0,0.0,0.0,0
-Welcome back bb,3550.0,1934,1934,0.0,Run,11364604807,2024-05-08T17:21:29Z,0,2,0,0,1.836,0.0,130.7,163.0,0.0,0.0,0
+Welcome back bb,3550.0,1934,1934,0.0,Run,11364604807,2024-05-08T17:21:29Z,0,3,0,0,1.836,0.0,130.7,163.0,0.0,0.0,0
 Treinamento com peso vespertino,0.0,5523,5523,0.0,WeightTraining,11360276721,2024-05-07T17:22:11Z,0,0,0,0,0.0,0.0,98.7,154.0,0.0,0.0,0
 Treinamento com peso vespertino,0.0,5971,5971,0.0,WeightTraining,11360276714,2024-05-06T17:12:50Z,0,0,0,0,0.0,0.0,99.9,152.0,0.0,0.0,0
 Caminhada matinal,4386.5,4205,4968,159.8,Walk,11364605200,2024-05-04T06:34:38Z,0,1,0,0,1.043,10.248,109.9,142.0,914.7,785.1,0

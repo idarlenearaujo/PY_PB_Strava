@@ -114,14 +114,15 @@ class GerenciadorAtividades:
         self.df = Atividade.converter_distancia(self.df)
         self.df = Atividade.converter_tempo(self.df)
         self.df = Atividade.converter_velocidade(self.df)
+
         self.df = self.df[self.df["start_date_local"] > "2021-01-01"]
+
         self.df["data"] = pd.to_datetime(self.df["start_date_local"].dt.date)
+        self.df['duracao'] = self.df['elapsed_time']
         self.df['end_date_local'] = (
-            self.df['start_date_local'] + self.df['elapsed_time']
+            self.df["start_date_local"] + self.df['duracao']
         )
-        self.df['activity_duration'] = (
-            self.df['end_date_local'] - self.df['start_date_local']
-        )
+
         self.df.set_index("id", inplace=True)
 
         logging.info("Dados preparados!")
