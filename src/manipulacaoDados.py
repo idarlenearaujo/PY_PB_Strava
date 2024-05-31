@@ -112,16 +112,16 @@ class GerenciadorAtividades:
             pd.to_datetime(self.df["start_date_local"])
         )
         self.df = Atividade.converter_distancia(self.df)
-        self.df = Atividade.converter_tempo(self.df)
+        # self.df = Atividade.converter_tempo(self.df)
         self.df = Atividade.converter_velocidade(self.df)
 
         self.df = self.df[self.df["start_date_local"] > "2021-01-01"]
 
         self.df["data"] = pd.to_datetime(self.df["start_date_local"].dt.date)
         self.df['duracao'] = self.df['elapsed_time']
-        self.df['end_date_local'] = (
-            self.df["start_date_local"] + self.df['duracao']
-        )
+        # self.df['end_date_local'] = (
+        #    self.df["start_date_local"] + self.df['duracao']
+        # )
 
         self.df.set_index("id", inplace=True)
 
@@ -173,6 +173,24 @@ class GerenciadorAtividades:
 
         logging.info("Nulos tratados!")
 
+    def substitui_sport_type(self):
+        """Substituindo os nomes das atividades fisicas equivalentes em
+        português"""
+        esporte = {
+            'Walk': 'caminhada',
+            'Run': 'corrida',
+            'StairStepper': 'simulador de escadas',
+            'WeightTraining': 'treino com peso',
+            'Workout': 'treino livre',
+            'Swim': 'natação',
+            'Ride': 'bicicleta',
+            'Walk': 'caminhada'
+        }
+
+        self.df['sport_type'] = (
+            self.df['sport_type'].replace(esporte, regex=True)
+        )
+
     def salvar_dados(self, caminho):
         """
         Salvando arquivo pronto para análise
@@ -197,4 +215,5 @@ if __name__ == "__main__":
         dados_atividade = GerenciadorAtividades(caminho_ler)
         dados_atividade.verifica_nulos()
         dados_atividade.trata_nulos()
+        dados_atividade.substitui_sport_type()
         dados_atividade.salvar_dados(caminho_salvar)
