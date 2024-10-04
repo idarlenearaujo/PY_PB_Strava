@@ -1,7 +1,12 @@
 import requests
 import pandas as pd
+import logging
 from pathlib import Path
 
+
+# Configurando o logging
+logging.basicConfig(level=logging.INFO,
+                    format='%(asctime)s - %(levelname)s - %(message)s')
 
 # Constantes
 AUTH_URL = "https://www.strava.com/oauth/token"
@@ -34,7 +39,10 @@ class Conexao:
 
     def _autenticar(self):
         """
-        Dados e processo para a autenticação
+        Autentica o usuário na API do Strava e retorna o token de acesso.
+
+        Returns:
+            str: Token de acesso.
         """
         autenticacao = {
             "client_id": self.cliente_id,
@@ -44,9 +52,13 @@ class Conexao:
             "f": "json",
         }
 
-        with requests.post(AUTH_URL, autenticacao, False) as resp:
-            resp.raise_for_status()
-            return resp.json()["access_token"]
+        try:
+            response = requests.post(AUTH_URL, autenticacao)
+            response.raise_for_status()
+            return response.json()["access_token"]
+        except requests.exceptions.HTTPError as err:
+            logging.error(f"Erro na autenticação: {err}")
+            raise
 
     def _recuperar_atividades(self, access_token):
         """
@@ -59,14 +71,21 @@ class Conexao:
 
         while True:
             param = {"per_page": 200, "page": self.num_pagina}
-            db = requests.get(ACTIVITIES_URL, headers=head, params=param)
-            db = db.json()
+            try:
+                response = requests.get(ACTIVITIES_URL,
+                                        headers=head,
+                                        params=param)
+                response.raise_for_status()
+                atividades = response.json()
 
-            if not db:
+                if not atividades:
+                    break
+
+                self.atividades.extend(atividades)
+                self.num_pagina += 1
+            except requests.exceptions.RequestException as err:
+                logging.error(f"Erro ao recuperar atividades: {err}")
                 break
-
-            self.atividades.extend(db)
-            self.num_pagina += 1
 
     def _salvar_dados(self):
         """
@@ -129,6 +148,7 @@ class Conexao:
 
         caminho = ROOT_PATH / "data/raw/strava_data.csv"
         df.to_csv(caminho, index=False, header=True)
+        logging.info("Dados salvos em strava_data.csv")
 
     def criar_conexao(self):
         """
@@ -144,10 +164,9 @@ class Conexao:
 
             if self.atividades:
                 self._salvar_dados()
-                print("Dados salvos em Strava_Data!\n")
 
         except requests.exceptions.HTTPError as err:
-            print(f"Erro: {err}")
+            logging.error(f"Erro: {err}")
 
 
 if __name__ == "__main__":
