@@ -49,3 +49,5 @@ Apesar da mudança de esportes, a atividade física nunca foi extinta, mas sim e
 ![Alt text](image-4.png)
 
 O heatmap revela variações na duração média dos treinos com peso ao longo das semanas e dias da semana. A terça-feira da semana 37 se destaca como um dia de treino particularmente longo, pode ser que o usuário não tenha parado o relógio. Enquanto a quarta-feira da semana 36 não teve treino registrado. A consistência nos treinos de sexta-feira sugere uma rotina bem estabelecida para esse dia. Essas variações podem ser influenciadas por fatores como disponibilidade de tempo, níveis de energia, ou objetivos específicos de treino para cada semana.
+
+[ . . . ] Em atualização
