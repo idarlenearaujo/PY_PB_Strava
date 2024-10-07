@@ -8,6 +8,20 @@ Este projeto realiza a extração, ajuste e análise de dados de atividades fís
 - **data/**: Dados brutos e processados.
 - **notebooks/**: Notebooks Jupyter para análise exploratória.
 - **reports/**: Relatórios gerados, gráficos e visualizações.
-- **docs/**: Documentação adicional.
-- **tests/**: Scripts de teste para validar o código.
 
+```bash
+|--data/
+|   |--processed/
+|   |   |--data.csv
+|   |--raw/
+|   |   |--strava_data.csv
+|--notebook/
+|   |--exploracao.ipynb
+|   |--manipulacao.ipynb
+|--reports
+|   |--img/
+|   |--relatorio.md
+|--src
+|   |--manipulacaoDados.py
+|   |--strava_api.py
+README.md
